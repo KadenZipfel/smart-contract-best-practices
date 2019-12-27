@@ -71,7 +71,7 @@ contract Fixed {
 }
 ```
 
-Note that `.call()` does nothing to mitigate reentrancy attacks, so other precautions must be taken.
+Note that `.call()` does nothing to mitigate reentrancy attacks, so other precautions must be taken. To prevent reentrancy attacks, it is recommended that you use the [checks-effects-interactions pattern](https://solidity.readthedocs.io/en/develop/security-considerations.html?highlight=check%20effects#use-the-checks-effects-interactions-pattern).
 
 --------
 
