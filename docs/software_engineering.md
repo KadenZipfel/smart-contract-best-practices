@@ -186,6 +186,10 @@ function withdraw(uint amount) public {
     // Update period before proceeding
     updatePeriod();
     
+    // Prevent overflow
+    uint totalAmount = currentPeriodAmount + amount;
+    require(totalAmount >= currentPeriodAmount, 'overflow');
+    
     // Disallow withdraws that exceed current rate limit
     require(currentPeriodAmount + amount < limit, 'exceeds period limit');
     currentPeriodAmount += amount;
